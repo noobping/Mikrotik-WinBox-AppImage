@@ -21,21 +21,21 @@ cp -r lutris*/* usr/
 echo "Performing cleanup..."
 rm -rf *.tar.xz \
        lutris* \
-       usr/bin/msidb \
-       usr/bin/wineconsole \
-       usr/bin/msiexec \
-       usr/bin/notepad \
-       usr/bin/regedit \
-       usr/bin/regsvr32 \
-       usr/bin/wine-preloader \
-       usr/bin/wine64-preloader \
-       usr/bin/wineconsole \
-       usr/bin/winedbg \
-       usr/bin/winefile \
-       usr/bin/winemine \
-       usr/bin/winepath \
-       usr/share/man \
-       usr/share/applications/wine.desktop
+       AppDir/usr/bin/msidb \
+       AppDir/usr/bin/wineconsole \
+       AppDir/usr/bin/msiexec \
+       AppDir/usr/bin/notepad \
+       AppDir/usr/bin/regedit \
+       AppDir/usr/bin/regsvr32 \
+       AppDir/usr/bin/wine-preloader \
+       AppDir/usr/bin/wine64-preloader \
+       AppDir/usr/bin/wineconsole \
+       AppDir/usr/bin/winedbg \
+       AppDir/usr/bin/winefile \
+       AppDir/usr/bin/winemine \
+       AppDir/usr/bin/winepath \
+       AppDir/usr/share/man \
+       AppDir/usr/share/applications/wine.desktop
 
 echo "Done"
-mkdir -p $(pwd)/var/data/wine
+mkdir -p $(pwd)/AppDir/var/data/wine
