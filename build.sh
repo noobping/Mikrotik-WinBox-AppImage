@@ -5,6 +5,7 @@ HASH="466f5d77d7b9821f1023859a5e467b9344afd25cb3018b04ac0e89c9d25fd8c0"
 
 echo "Downloading the file..."
 curl -L $URL -o wine-lutris.tar.xz
+curl -L https://mt.lv/winbox64 -o winbox64.exe
 
 echo "Validating the hash..."
 DOWNLOADED_HASH=$(sha256sum wine-lutris.tar.xz | awk '{ print $1 }')
