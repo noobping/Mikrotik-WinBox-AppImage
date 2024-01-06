@@ -30,7 +30,7 @@ jobs:
 
     - name: Upload AppImage to Release
       uses: meeDamian/github-release@2.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          tag: $TAG_NAME
-          files: "*.AppImage"
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        tag: $TAG_NAME
+        files: "*.AppImage"
