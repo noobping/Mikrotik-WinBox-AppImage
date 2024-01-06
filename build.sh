@@ -16,7 +16,7 @@ fi
 
 echo "Extracting the archive..."
 tar -xvf wine-lutris.tar.xz
-cp -r lutris*/* usr/
+cp -r lutris*/* AppDir/usr/
 
 echo "Performing cleanup..."
 rm -rf *.tar.xz \
