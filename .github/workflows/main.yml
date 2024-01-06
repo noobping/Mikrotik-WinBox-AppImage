@@ -20,6 +20,14 @@ jobs:
     - name: Run Build Script
       run: sh ./build.sh
 
+    - name: Create and Push Tag
+      run: |
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
+        TAG_NAME="release-$(date +%Y%m%d%H%M%S)-${GITHUB_SHA:0:8}"
+        git tag $TAG_NAME $GITHUB_SHA
+        git push origin $TAG_NAME
+
     - name: Upload AppImage to Release
       uses: meeDamian/github-release@2.0
       with:
