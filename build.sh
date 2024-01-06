@@ -17,8 +17,7 @@ echo "Download winbox..."
 curl -L https://mt.lv/winbox64 -o AppDir/winbox64.exe
 
 echo "Build AppImage..."
-ARCH=x86_64 appimagetool.AppImage -v AppDir
-
-if ! command -v appimagetool.AppImage >/dev/null 2>&1
-then appimagetool.AppImage
+if command -v appimagetool.AppImage >/dev/null 2>&1
+then ARCH=x86_64 appimagetool.AppImage -v AppDir
+else ARCH=x86_64 ./appimagetool.AppImage -v AppDir
 fi
