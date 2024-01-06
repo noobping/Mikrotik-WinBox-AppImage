@@ -15,23 +15,18 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Download wine
+      - name: Download and build
         run: |
           LATEST_WINE=$(curl -L "https://api.github.com/repos/mmtrt/WINE_AppImage/releases/latest" | jq -r .assets[0].browser_download_url)
           curl -L $LATEST_WINE -o AppDir/wine.AppImage
           chmod +x AppDir/wine.AppImage
 
-      - name: Download app image tool
-        run: |
           LATEST_TOOL=$(curl -L "https://api.github.com/repos/AppImage/AppImageKit/releases/latest" | jq -r '.assets[] | select(.name | test("appimagetool-x86_64.AppImage$")) | .browser_download_url')
           curl -L $LATEST_TOOL -o appimagetool.AppImage
           chmod +x appimagetool.AppImage
 
-      - name: Download winbox
-        run: curl -L https://mt.lv/winbox64 -o AppDir/winbox64.exe
-
-      - name: Build
-        run: ARCH=x86_64 appimagetool.AppImage -v AppDir
+          curl -L https://mt.lv/winbox64 -o AppDir/winbox64.exe
+          ARCH=x86_64 appimagetool.AppImage -v AppDir
 
       - name: release
         uses: marvinpinto/action-automatic-releases@6273874b61ebc8c71f1a61b2d98e234cf389b303
