@@ -38,4 +38,6 @@ rm -rf *.tar.xz \
        AppDir/usr/share/applications/wine.desktop
 
 echo "Done"
+chmod +x AppDir/usr/bin/*
+chmod +x AppDir/AppRun
 mkdir -p $(pwd)/AppDir/var/data/wine
