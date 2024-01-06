@@ -1,0 +1,4 @@
+#!/bin/sh
+source $(pwd)
+export WINEPREFIX=$(pwd)var/data/wine
+exec usr/bin/wine usr/share/winbox/winbox64.exe
