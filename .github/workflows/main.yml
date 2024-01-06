@@ -18,7 +18,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Run Build Script
-      run: ./build.sh
+      run: sh ./build.sh
 
     - name: Create Release
       id: create_release
