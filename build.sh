@@ -43,3 +43,4 @@ echo "Done"
 chmod +x AppDir/usr/bin/*
 chmod +x AppDir/AppRun
 mkdir -p $(pwd)/AppDir/var/data/wine
+chmod -R 755 $(pwd)/AppDir/var/data/wine
