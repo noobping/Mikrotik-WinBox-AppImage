@@ -1,4 +1,4 @@
 #!/bin/sh
-source "$APPDIR/usr/bin"
+export PATH="$APPDIR/usr/bin:$PATH"
 export WINEPREFIX="$APPDIR/var/data/wine"
 exec "$APPDIR/usr/bin/wine" "$APPDIR/winbox64.exe"
