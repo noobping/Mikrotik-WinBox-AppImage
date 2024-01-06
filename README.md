@@ -1,7 +1,5 @@
 # Mikrotik-WinBox-AppImage
-Wine and WinBox bundled in a AppImage
-
-Build with the [appimagetool](https://github.com/AppImage/AppImageKit/releases)
+Wine and WinBox bundled in a AppImage. It is build with the [app image tool](https://github.com/AppImage/AppImageKit/releases).
 
 ```bash
 sh ./build.sh
