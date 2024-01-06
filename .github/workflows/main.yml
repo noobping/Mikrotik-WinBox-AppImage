@@ -34,3 +34,4 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         tag: $TAG_NAME
         files: "*.AppImage"
+        allow_override: true
