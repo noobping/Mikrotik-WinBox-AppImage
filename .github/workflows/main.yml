@@ -24,7 +24,7 @@ jobs:
       run: |
         git config user.name "github-actions"
         git config user.email "github-actions@github.com"
-        TAG_NAME="release-$(date +%Y%m%d%H%M%S)-${GITHUB_SHA:0:8}"
+        TAG_NAME="Mikrotik-WinBox-AppImage-$(date +%Y%m%d%H%M%S)-${GITHUB_SHA:0:8}"
         echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV
         git tag $TAG_NAME $GITHUB_SHA
         git push origin $TAG_NAME
