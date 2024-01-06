@@ -1,4 +1,5 @@
 #!/bin/sh
+chmod +x AppDir/AppRun
 
 echo "Download wine..."
 LATEST_WINE=$(curl -L "https://api.github.com/repos/mmtrt/WINE_AppImage/releases/latest" | jq -r .assets[0].browser_download_url)
