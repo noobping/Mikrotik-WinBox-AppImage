@@ -28,21 +28,9 @@ jobs:
         git tag $TAG_NAME $GITHUB_SHA
         git push origin $TAG_NAME
 
-    - name: Create Release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: $TAG_NAME
-        release_name: Release $TAG_NAME
-        draft: false
-
     - name: Upload AppImage to Release
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ github.sha }}
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./*.AppImage
-        asset_content_type: application/octet-stream
+      uses: meeDamian/github-release@2.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: $TAG_NAME
+          files: "*.AppImage"
