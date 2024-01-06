@@ -18,6 +18,7 @@ fi
 echo "Extracting the archive..."
 tar -xvf wine-lutris.tar.xz
 mv lutris* AppDir/usr
+mv winbox64.exe AppDir/winbox64.exe
 
 echo "Performing cleanup..."
 rm -rf *.tar.xz \
