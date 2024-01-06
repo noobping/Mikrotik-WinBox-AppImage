@@ -1,4 +1,4 @@
 #!/bin/sh
-DIR="$(pwd)"
-export WINEPREFIX="$DIR/var/data/wine"
-exec /usr/bin/wine "$DIR/winbox64.exe"
+source "$APPDIR/usr/bin"
+export WINEPREFIX="$APPDIR/var/data/wine"
+exec "$APPDIR/usr/bin/wine" "$APPDIR/winbox64.exe"
