@@ -19,8 +19,8 @@ tar -xvf wine-lutris.tar.xz
 cp -r lutris*/* usr/
 
 echo "Performing cleanup..."
-rm -rf wine-lutris.tar.xz
-       lutris*
+rm -rf *.tar.xz \
+       lutris* \
        usr/bin/msidb \
        usr/bin/wineconsole \
        usr/bin/msiexec \
