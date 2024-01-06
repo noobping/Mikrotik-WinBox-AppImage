@@ -3,5 +3,4 @@
 
 ```bash
 sh ./build.sh
-ARCH=x86_64 appimagetool.AppImage -v AppDir
 ```
