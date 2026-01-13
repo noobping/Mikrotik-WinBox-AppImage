@@ -67,23 +67,5 @@
     <binary>winbox</binary>
   </provides>
 
-  <releases>
-    <release version="0.4.0.44" date="2025-12-10">
-      <description>
-        <p>
-          What's new in 4.0beta44:
-        </p>
-        <ul>
-          <li>change font from custom Manrope to Inter</li>
-          <li>rework scaling to support OS fractional scaling values</li>
-          <li>rework resources and settings panel for a more compact layout</li>
-          <li>make app settings popup non-modal and without overlay</li>
-          <li>fix wireless object panel memory leak</li>
-          <li>add support for RouterOS skin files</li>
-          <li>fix input handling for alternate keyboard layouts when using the Alt key</li>
-        </ul>
-      </description>
-    </release>
-  </releases>
   <content_rating type="oars-1.1"/>
 </component>
