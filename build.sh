@@ -15,7 +15,7 @@ then
 fi
 
 echo "Download winbox..."
-curl -L https://mt.lv/winbox64 -o AppDir/winbox64.exe
+curl -L https://download.mikrotik.com/routeros/winbox/3.42/winbox64.exe -o AppDir/winbox64.exe
 
 echo "Build AppImage..."
 if command -v appimagetool.AppImage >/dev/null 2>&1
