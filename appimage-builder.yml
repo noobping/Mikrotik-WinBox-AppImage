@@ -1,0 +1,32 @@
+version: 1
+
+script:
+  - mkdir -p AppDir/usr/bin AppDir/usr/share/icons/hicolor/1024x1024/apps AppDir/usr/share/metainfo
+  - cp unpack/WinBox AppDir/usr/bin/winbox
+  - chmod +x AppDir/usr/bin/winbox
+  - cp unpack/assets/img/winbox.png AppDir/usr/share/icons/hicolor/1024x1024/apps/com.mikrotik.WinBox.png
+  - cp metainfo.xml AppDir/usr/share/metainfo/com.mikrotik.WinBox.metainfo.xml
+
+AppDir:
+  path: ./AppDir
+
+  app_info:
+    id: com.mikrotik.WinBox
+    name: "WinBox"
+    icon: com.mikrotik.WinBox
+    version: "0.4.0.44"
+    exec: usr/bin/winbox
+
+  apt:
+    arch: amd64
+    sources:
+      - sourceline: "deb http://deb.debian.org/debian trixie main"
+        key_url: "https://ftp-master.debian.org/keys/archive-key-12.asc"
+    include:
+      - ca-certificates
+      - libcurl4
+      - libssl3
+
+AppImage:
+  arch: x86_64
+  update-information: guess

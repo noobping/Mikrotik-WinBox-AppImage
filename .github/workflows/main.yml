@@ -1,11 +1,19 @@
 name: Build and Release
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
+      - master
+      - develop
+      - development
     paths-ignore:
       - README.md
+
+concurrency:
+  group: winbox-linux-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-and-release:
@@ -16,26 +24,41 @@ jobs:
       id-token: write
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Run Build Script
-      run: sh ./build.sh
+      - name: Build AppImage
+        shell: bash
+        run: |
+          set -euo pipefail
 
-    - name: Create and Push Tag
-      run: |
-        git config user.name "github-actions"
-        git config user.email "github-actions@github.com"
-        TAG_NAME="Mikrotik-WinBox-AppImage-$(date +%Y%m%d%H%M%S)-${GITHUB_SHA:0:8}"
-        echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV
-        git tag $TAG_NAME $GITHUB_SHA
-        git push origin $TAG_NAME
+          source <(python3 ./version.py)
+          echo "Detected WinBox version: ${WINBOX_VERSION}"
+          echo "Detected Linux SHA256:   ${WINBOX_SHA256}"
 
-    - name: Upload AppImage to Release
-      uses: meeDamian/github-release@2.0
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        tag: ${{ env.TAG_NAME }}
-        files: "*.AppImage"
-        gzip: false
-        allow_override: true
+          URL="https://download.mikrotik.com/routeros/winbox/${WINBOX_VERSION}/WinBox_Linux.zip"
+          curl -fsSL "$URL" -o WinBox_Linux.zip
+          echo "${WINBOX_SHA256}  WinBox_Linux.zip" | sha256sum -c -
+
+          mkdir -p unpack
+          unzip -q WinBox_Linux.zip -d unpack
+
+          docker run --rm \
+            -v "${PWD}:/project" -w /project \
+            appimagecrafters/appimage-builder:latest \
+            appimage-builder --skip-test --recipe appimage-builder.yml
+
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          echo "WINBOX_VERSION=$WINBOX_VERSION" >> $GITHUB_ENV
+          git tag $WINBOX_VERSION $GITHUB_SHA
+          git push origin $WINBOX_VERSION
+
+      - name: Upload AppImage to Release
+        uses: meeDamian/github-release@2.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ env.WINBOX_VERSION }}
+          files: "*.AppImage"
+          gzip: false
+          allow_override: true

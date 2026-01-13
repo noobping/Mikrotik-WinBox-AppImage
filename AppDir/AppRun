@@ -1,3 +1,0 @@
-#!/bin/sh
-export WINEPREFIX=$HOME/.winbox
-exec "$APPDIR/wine.AppImage" "$APPDIR/winbox64.exe"

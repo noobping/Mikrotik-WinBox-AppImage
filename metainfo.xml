@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.mikrotik.WinBox</id>
+  <launchable type="desktop-id">io.github.noobping.listenmoe.desktop</launchable>
+  <name>Win Box</name>
+  <summary>MikroTik Device Management</summary>
+  <description>
+    <p>
+      At MikroTik, we believe in empowering users without locking them behind subscriptions or paywalls. That's why Win Box is your go-to platform for configuring and managing MikroTik devices with ultimate freedom, precision, and speed. Whether you're a seasoned network administrator or a tech enthusiast, Win Box delivers everything you need to manage your network effortlessly, at no extra cost.
+    </p>
+    <p>
+      Win Box is a advanced desktop utility to manage RouterOS limitless configuration options. With Win Box you can setup any of MikroTik products. Available for all desktop operating systems.
+    </p>
+    <ul>
+      <li>Completely free, no paywalls</li>
+      <li>Intuitive interface</li>
+      <li>Advanced Configuration</li>
+      <li>Live Monitoring</li>
+      <li>Device Discovery</li>
+      <li>Powerful Scripting Tools</li>
+      <li>Secure and Reliable</li>
+      <li>Multi-session Support</li>
+    </ul>
+  </description>
+
+  <developer id="com.mikrotik.WinBox">
+    <name>Mikrotik</name>
+  </developer>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+
+  <icon type="stock">com.mikrotik.WinBox</icon>
+
+  <url type="homepage">https://mikrotik.com/</url>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#00CEEE</color>
+    <color type="primary" scheme_preference="dark">#002D57</color>
+  </branding>
+
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </supports>
+
+  <categories>
+    <category>Utility</category>
+  </categories>
+
+  <keywords>
+    <keyword>Device</keyword>
+    <keyword>Management</keyword>
+  </keywords>
+
+  <recommends>
+    <display_length compare="ge">1000</display_length>
+  </recommends>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://cdn.mikrotik.com/web-assets/website/assets/images/winbox-ui-tiny.webp</image>
+    </screenshot>
+  </screenshots>
+
+  <provides>
+    <binary>winbox</binary>
+  </provides>
+
+  <releases>
+    <release version="0.4.0.44" date="2025-12-10">
+      <description>
+        <p>
+          What's new in 4.0beta44:
+        </p>
+        <ul>
+          <li>change font from custom Manrope to Inter</li>
+          <li>rework scaling to support OS fractional scaling values</li>
+          <li>rework resources and settings panel for a more compact layout</li>
+          <li>make app settings popup non-modal and without overlay</li>
+          <li>fix wireless object panel memory leak</li>
+          <li>add support for RouterOS skin files</li>
+          <li>fix input handling for alternate keyboard layouts when using the Alt key</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>
