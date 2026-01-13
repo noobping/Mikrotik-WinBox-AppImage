@@ -14,7 +14,7 @@ AppDir:
     id: com.mikrotik.WinBox
     name: "WinBox"
     icon: com.mikrotik.WinBox
-    version: "0.4.0.44"
+    version: "4.0beta44"
     exec: usr/bin/winbox
 
   apt:
