@@ -1,3 +1,8 @@
-usr
-var
-*.tar*
+*.AppImage
+*.zip
+*cache
+.*build*
+AppDir
+WinBox
+assets
+unpack

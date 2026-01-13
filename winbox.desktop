@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Win Box
+Comment=MikroTik Device Management
+Exec=winbox
+Icon=com.mikrotik.WinBox
+Terminal=false
+Type=Application
+Categories=Utility
+StartupWMClass=winbox
