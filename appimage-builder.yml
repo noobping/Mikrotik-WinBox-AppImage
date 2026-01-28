@@ -5,7 +5,7 @@ script:
   - cp unpack/WinBox AppDir/usr/bin/winbox
   - chmod +x AppDir/usr/bin/winbox
   - cp unpack/assets/img/winbox.png AppDir/usr/share/icons/hicolor/1024x1024/apps/com.mikrotik.WinBox.png
-  - cp metainfo.xml AppDir/usr/share/metainfo/com.mikrotik.WinBox.metainfo.xml
+  - cp metainfo.xml AppDir/usr/share/metainfo/com.mikrotik.WinBox.appdata.xml
 
 AppDir:
   path: ./AppDir
